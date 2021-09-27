@@ -7,8 +7,8 @@
 typedef long long ll;
 using namespace std;
 
-int exp(int a,int n){
-    int b=1;
+ll exp(ll a,ll n){
+    ll b=1;
     for(ll i = 0; i < n; i++){
         b *= a;
     }
@@ -32,21 +32,21 @@ int ctoi(char c) {
 }
 
 int main(){
-    int K,A,B; cin >> K >> A >> B;
+    ll K,A,B; cin >> K >> A >> B;
     
     string a = to_string(A);
     string b = to_string(B);
 
-    int A10=0,B10=0;
+    ll A10=0,B10=0;
 
     for(ll i = 0; i < a.size(); i++){
-        int x = ctoi(a[i]);
+        ll x = ctoi(a[i]);
         A10 += x*exp(K,a.size()-i-1);
         // cout << x << endl;
     }
 
     for(ll i = 0; i < b.size(); i++){
-        int y = ctoi(b[i]);
+        ll y = ctoi(b[i]);
         B10 += y*exp(K,b.size()-i-1);
     }
 
