@@ -20,7 +20,7 @@ sort(v.begin(),v.end(),[](int a, int b){
 計算量はO(NlogN)
 
 ## substr(n,m)
-n番目以降の文字列をm文字だけ取り出す場合は`substr(n,m)`とする。
+n番目以降の文字列Sをm文字だけ取り出す場合は`S.substr(n,m)`とする。
 
 ## count
 `count(v.begin(),v.end(),x)`と使い、vの中でxがいくつ含まれているかを返す
@@ -35,3 +35,9 @@ do{
     //code
 }while(next_permutation(v.begin(),v.end()));
 ```
+
+## charをint(stlの関数ではない)
+`(ll)(c - '0')`とすればよい。(ASCIIコード表の48～57は文字の'0'~'9'に対応)
+
+## isupper,islower
+文字sが大文字ならば`isupper(s)`はtrueを、小文字ならば`islower(s)`はtrueを返す。
