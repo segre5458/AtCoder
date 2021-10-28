@@ -36,8 +36,12 @@ do{
 }while(next_permutation(v.begin(),v.end()));
 ```
 
-## charをint(stlの関数ではない)
+## charをllに(stlの関数ではない)
 `(ll)(c - '0')`とすればよい。(ASCIIコード表の48～57は文字の'0'~'9'に対応)
 
 ## isupper,islower
 文字sが大文字ならば`isupper(s)`はtrueを、小文字ならば`islower(s)`はtrueを返す。
+
+## setprecision
+小数点以下の桁数を設定する
+`cout << fixed << setprecision(桁数);`で指定する。
