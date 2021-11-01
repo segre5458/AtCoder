@@ -12,32 +12,28 @@ using namespace std;
 
 int main(){
     ll H,W,K; cin >> H >> W >> K;
-    vector<vector<ll>> c(H,vector<ll>(W));
+    vector<string> c(H);
     for(ll i = 0; i < H; i++){
-        for(ll j = 0; j < W; j++){
-            cin >> c[i][j];
-        }
+        cin >> c[i];
     }
 
     ll ans = 0;
-
+    
     for(ll bit = 0; bit < (1 << H); bit++){
-        for(ll i = 0; i < H; i++){
-            if(i & (1 << i)){
+        for(ll bit2 = 0; bit2 < (1 << W); bit2++){
+            ll cnt = 0;
+            for(ll i = 0; i < H; i++){
+                if(bit & (1 << i)) continue;
                 for(ll j = 0; j < W; j++){
-                    c[i][j] = '.';
+                    if(bit2 & (1 << j)) continue;
+                    if(c[i][j] == '#') cnt++;
                 }
             }
+            if(cnt == K) ans++;
         }
     }
 
-    for(ll bit = 0; bit < (1 << W); bit++){
-        for(ll i = 0; i < W; i++){
-            if(bit & (1 << i)){
-                for(ll j = 0; j < H; j++){
-                    c[j][i] = '.';
-                }
-            }
-        }
-    }
+    cout << ans << endl;
+
+    return 0;
 }
